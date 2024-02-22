@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gametimer/static/css/main.07ae2e65.css",
+    "main.js": "/gametimer/static/js/main.c914886b.js",
+    "index.html": "/gametimer/index.html",
+    "main.07ae2e65.css.map": "/gametimer/static/css/main.07ae2e65.css.map",
+    "main.c914886b.js.map": "/gametimer/static/js/main.c914886b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07ae2e65.css",
+    "static/js/main.c914886b.js"
+  ]
+}

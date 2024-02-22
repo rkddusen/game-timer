@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/gametimer/static/css/main.57aa7be6.css",
-    "main.js": "/gametimer/static/js/main.c914886b.js",
+    "main.js": "/gametimer/static/js/main.10d822e7.js",
+    "static/media/1.mp3": "/gametimer/static/media/1.2812201de929a6b6a2db.mp3",
+    "static/media/2.mp3": "/gametimer/static/media/2.5e5bdcf821e12f534dfb.mp3",
     "index.html": "/gametimer/index.html",
     "main.57aa7be6.css.map": "/gametimer/static/css/main.57aa7be6.css.map",
-    "main.c914886b.js.map": "/gametimer/static/js/main.c914886b.js.map"
+    "main.10d822e7.js.map": "/gametimer/static/js/main.10d822e7.js.map"
   },
   "entrypoints": [
     "static/css/main.57aa7be6.css",
-    "static/js/main.c914886b.js"
+    "static/js/main.10d822e7.js"
   ]
 }

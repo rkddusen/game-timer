@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import audio1 from './assets/audio/1.mp3';
+import audio2 from './assets/audio/2.mp3';
 import useInterval from './useInterval';
 
 function App() {
@@ -9,8 +11,8 @@ function App() {
   const [delay, setDelay] = useState(1000); // 1초
   const [score, setScore] = useState(new Array(PEOPLE).fill(['']));
 
-  const audio1 = new Audio('./audio/1.mp3');
-  const audio2 = new Audio('./audio/2.mp3');
+  const sound1 = new Audio(audio1);
+  const sound2 = new Audio(audio2);
 
   const initialItem = () => {
     let arr = [];
@@ -23,6 +25,7 @@ function App() {
         arr[i][j] = 0;
       }
     }
+    console.log(arr);
     return arr;
   }
   const [wins, setWins] = useState(initialItem);
@@ -31,10 +34,11 @@ function App() {
     if(sec > 0){
       setSec(prev => prev - 1);
       if(sec === 91 || sec === 61 || sec === 31){
-        audio1.play();
+        console.log(audio1);
+        sound1.play();
       }
       if(sec === 1){
-        audio2.play();
+        sound2.play();
       }
     }
   }, delay);
@@ -72,14 +76,18 @@ function App() {
     let _nowGame = score[0].length - 1;
     for(let i = 0; i < PEOPLE; i++){
       if(score[i][_nowGame] === '') return;
-      _nowScore.push(Number(score[i][_nowGame]));
+
+      if(!!Number(score[i][_nowGame]))
+        _nowScore.push(Number(score[i][_nowGame]));
+      else return;
     }
     
+    // 한 명은 무조건 1등, 나머지는 2등/3등이거나 점수가 같은 경우 둘 다 3등
     for(let i = 0; i < PEOPLE; i++){
       let rank = 1;
       for(let j = 0; j < PEOPLE; j++){
         if(i !== j){
-          if(_nowScore[i] < _nowScore[j]) rank++;
+          if(_nowScore[i] <= _nowScore[j]) rank++;
         }
       }
       _wins[i][rank]++;
@@ -116,7 +124,9 @@ function App() {
             </span>
           </div>
         ))}
-        <button className='score-calculate' onClick={handleCalculate}>계산</button>
+        <div style={{textAlign: 'start'}}>
+          <button style={{marginRight: '10px'}} className='score-calculate' onClick={handleCalculate}>계산</button>
+        </div>
       </div>
     </div>
   );

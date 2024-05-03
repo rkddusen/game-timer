@@ -7,6 +7,7 @@ import useInterval from './useInterval';
 function App() {
   const [people, setPeople] = useState(3);
   const [sec, setSec] = useState(0);
+  const [totalSec, setTotalSec] = useState(89);
   const [delay, setDelay] = useState(1000); // 1초
   
   const sound1 = new Audio(audio1);
@@ -34,7 +35,7 @@ function App() {
   useInterval(() => {
     if(sec > 0){
       setSec(prev => prev - 1);
-      if(sec === 91 || sec === 61 || sec === 31){
+      if(sec !== 1 && (sec - 1) % 30 === 0){
         sound1.play();
       }
       if(sec === 1){
@@ -54,7 +55,7 @@ function App() {
     const handleKeyUp = (event) => {
       if((event.key === " ")){
         setDelay(null);
-        setSec(89);
+        setSec(totalSec);
       }
     };
 
@@ -63,7 +64,7 @@ function App() {
     return () => {
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, []);
+  }, [totalSec]);
 
   // localStorage에 저장된 정보 가져옴
   useEffect(() => {
@@ -143,7 +144,17 @@ function App() {
 
   return (
     <div className="App" tabIndex="0" style={{width: '100vw', height: "100vh", padding: "50px", boxSizing: 'border-box'}}>
+      <div className='title'>
+        {Math.floor((totalSec + 1) / 60)}분
+        {(totalSec + 1) % 60 !== 0 ? (totalSec + 1) % 60 + '초 ' : ' '}
+        타이머
+      </div>
       {Math.floor(sec / 60)} : {sec % 60}
+      <div className='total-sec'>
+        <div onClick={() => {setTotalSec(59)}}>1분</div>
+        <div onClick={() => {setTotalSec(89)}}>1분 30초</div>
+        <div onClick={() => {setTotalSec(119)}}>2분</div>
+      </div>
       <div className='score'>
         <div style={{textAlign: 'start'}}>
           <button style={{marginRight: '10px'}} className='score-calculate' onClick={handlePeopleAdd}>인원 추가</button>

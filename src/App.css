@@ -6,10 +6,33 @@ body{
 
 .App {
   text-align: center;
-  font-size: 230px;
+  font-size: 200px;
 }
 .App:focus-visible {
   outline: none;
+}
+.title{
+  font-size: 20px;
+}
+.total-sec{
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  & > div{
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 20px;
+
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
 
 .score{

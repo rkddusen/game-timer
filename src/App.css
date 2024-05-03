@@ -6,24 +6,24 @@ body{
 
 .App {
   text-align: center;
-  font-size: 250px;
+  font-size: 230px;
 }
 .App:focus-visible {
   outline: none;
 }
 
 .score{
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
 }
 .score-row{
   display: flex;
   justify-content: start;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 .score-name{
-  width: 80px;
+  width: 110px;
   text-align: start;
 }
 .score-value{

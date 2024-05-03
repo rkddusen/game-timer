@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gametimer/static/css/main.57aa7be6.css",
-    "main.js": "/gametimer/static/js/main.440acbac.js",
-    "static/media/1.mp3": "/gametimer/static/media/1.2812201de929a6b6a2db.mp3",
-    "static/media/2.mp3": "/gametimer/static/media/2.5e5bdcf821e12f534dfb.mp3",
+    "main.css": "/gametimer/static/css/main.c6043835.css",
+    "main.js": "/gametimer/static/js/main.0206a9c2.js",
+    "static/media/2.mp3": "/gametimer/static/media/2.4b171edad0447d090a46.mp3",
+    "static/media/1.mp3": "/gametimer/static/media/1.3d4624aedede76e0a622.mp3",
     "index.html": "/gametimer/index.html",
-    "main.57aa7be6.css.map": "/gametimer/static/css/main.57aa7be6.css.map",
-    "main.440acbac.js.map": "/gametimer/static/js/main.440acbac.js.map"
+    "main.c6043835.css.map": "/gametimer/static/css/main.c6043835.css.map",
+    "main.0206a9c2.js.map": "/gametimer/static/js/main.0206a9c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.57aa7be6.css",
-    "static/js/main.440acbac.js"
+    "static/css/main.c6043835.css",
+    "static/js/main.0206a9c2.js"
   ]
 }
